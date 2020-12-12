@@ -7,6 +7,10 @@ public class Cart {
 
     private List<Item> itemList;
 
+    public Cart(){
+        itemList = new ArrayList<Item>();
+    }
+
     public void addItem(Item item) {
         itemList.add(item);
     }
@@ -23,4 +27,19 @@ public class Cart {
         return "";
     }
 
+    public boolean isCartEmpty() {
+        return itemList.isEmpty();
+    }
+
+    public int getItemCount() {
+        return itemList.size();
+    }
+
+    public double getTotalPrice() {
+        double totalPrice = 0.0;
+        for (Item item:itemList ) {
+            totalPrice += item.getPrice();
+        }
+        return totalPrice;
+    }
 }

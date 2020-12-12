@@ -2,10 +2,25 @@ package com.galvanize;
 
 public class Item {
 
+    public int itemCode;
     public String name;
     public double price;
     public boolean onSale;
-    public int qty;
+
+    public Item(int itemCode,String name, double price, boolean onSale){
+        this.itemCode = itemCode;
+        this.name = name;
+        this.price = price;
+        this.onSale = onSale;
+    }
+
+    public int getItemCode() {
+        return itemCode;
+    }
+
+    public void setItemCode(int itemCode) {
+        this.itemCode = itemCode;
+    }
 
     public String getName() {
         return name;
@@ -31,11 +46,6 @@ public class Item {
         this.onSale = onSale;
     }
 
-    public int getQty() {
-        return qty;
-    }
 
-    public void setQty(int qty) {
-        this.qty = qty;
-    }
+
 }
