@@ -5,13 +5,12 @@ import java.util.List;
 
 public class Cart {
 
-    public List<Item > getItems() {
-        return new ArrayList<>();
+    private List<Item> itemList;
 
+    public void addItem(Item item) {
+        itemList.add(item);
     }
-    public void addItem(Item item, int qty) {
 
-    }
     public String itemizedList(){
     return "";
     }
