@@ -89,7 +89,12 @@ public class Cart {
 
 
     public String getUpdatedItemizedList() {
-        return "";
+        StringBuffer buffer = new StringBuffer();
+        Map<Integer,List<Item>> itemizedQty = new HashMap<>();
+        itemizedQty =  itemList.stream().collect(Collectors.groupingBy(Item::getItemCode));
+        itemizedQty.entrySet().stream().forEach(e->buffer.append(getItemizedList(e.getValue())));
+        System.out.println(buffer);
+        return buffer.toString();
     }
 
     public int removeItem(Item itemParam) {

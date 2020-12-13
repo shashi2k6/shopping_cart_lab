@@ -47,7 +47,7 @@ class OnlineCartTests {
         assertEquals(2,cart.getCartQuantity());
         cart.addItem(new Item(101,"Watch",20.50,true));
         cart.addItem(new Item(101,"Watch",20.50,true));
-        assertEquals(3,cart.getCartQuantity());
+        assertEquals(4,cart.getCartQuantity());
     }
 
     //Given I have an empty cart, when I add items, then I expect it to see an itemized list of the items along with their price and quantity.
@@ -78,11 +78,13 @@ class OnlineCartTests {
     @Test
     public void getUpdatedItemizedList(){
 
-        cart.addItem(new Item(100,"Bag",10.0,false));
-        cart.addItem(new Item(101,"Watch",20.50,true));
+        cart.addItem(new Item(100,"Bag",10.0,true));
+        cart.addItem(new Item(100,"Bag",10.0,true));
         cart.removeItem(new Item(101,"Watch",20.50,true));
+        cart.addItem(new Item(101,"Watch",20.50,true));
 
-        assertEquals("[Bag]",cart.getUpdatedItemizedList());
+        StringBuffer buffer = new StringBuffer("Item name: Bag Item count: 2 Item price 20.0 Item name: Watch Item count: 1 Item price 20.5 ");
+        assertEquals(buffer.toString(),cart.getUpdatedItemizedList());
 
     }
 
