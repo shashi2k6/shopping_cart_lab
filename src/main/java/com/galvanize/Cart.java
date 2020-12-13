@@ -93,11 +93,7 @@ public class Cart {
     }
 
     public int removeItem(Item itemParam) {
-        for (Item item:itemList) {
-            if(item.getItemCode()==itemParam.getItemCode()){
-                itemList.remove(item);
-            }
-        }
+        itemList.remove(itemParam);
         return itemList.size();
     }
 }
