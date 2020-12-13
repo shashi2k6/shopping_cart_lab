@@ -10,24 +10,13 @@ public class Cart {
 
     private List<Item> itemList;
 
+    //Create t
     public Cart(){
         itemList = new ArrayList<Item>();
     }
 
     public void addItem(Item item) {
         itemList.add(item);
-    }
-
-    public String itemizedList(){
-    return "";
-    }
-
-    public String itemQuantities() {
-    return "";
-
-    }
-    public String onSaleItems()	{
-        return "";
     }
 
     public boolean isCartEmpty() {
