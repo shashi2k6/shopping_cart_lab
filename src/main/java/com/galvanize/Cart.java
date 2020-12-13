@@ -92,12 +92,12 @@ public class Cart {
         return "";
     }
 
-    public void removeItem(Item itemParam) {
+    public int removeItem(Item itemParam) {
         for (Item item:itemList) {
             if(item.getItemCode()==itemParam.getItemCode()){
                 itemList.remove(item);
             }
-
         }
+        return itemList.size();
     }
 }
