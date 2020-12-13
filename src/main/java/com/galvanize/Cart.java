@@ -10,23 +10,27 @@ public class Cart {
 
     private List<Item> itemList;
 
-    //Create t
+    //Create the empty cart object.
     public Cart(){
         itemList = new ArrayList<Item>();
     }
 
+    //Add the item to the cart
     public void addItem(Item item) {
         itemList.add(item);
     }
 
+    //Check is the cart is empty
     public boolean isCartEmpty() {
         return itemList.isEmpty();
     }
 
+    //Get the item count in the cart
     public int getItemCount() {
         return itemList.size();
     }
 
+    //Get the total price of the all items in the cart
     public double getTotalPrice() {
         double totalPrice = 0.0;
         for (Item item:itemList ) {
@@ -35,10 +39,12 @@ public class Cart {
         return totalPrice;
     }
 
+    //Get the total quantity of items in the cart
     public int getCartQuantity() {
         return itemList.size();
     }
 
+    //Get the itemized list and quantity and price of items in the cart
     public String getItemizedListWithQtyAndPrice() {
         StringBuffer buffer = new StringBuffer();
         Map<Integer,List<Item>> itemizedQty = new HashMap<>();
@@ -48,6 +54,7 @@ public class Cart {
         return buffer.toString();
     }
 
+    //check is the item on the sale
     public String getItemNotOnSale() {
 
         List<String> isItemOnSale = new ArrayList<String>();
@@ -61,6 +68,7 @@ public class Cart {
         return isItemOnSale.toString();
     }
 
+    //Get the itemized list
     private String getItemizedList(List<Item> items) {
         StringBuffer buffer = new StringBuffer();
         int itemCnt = 0;
@@ -76,7 +84,7 @@ public class Cart {
         return buffer.toString();
     }
 
-
+    //Get the update itemized list of the items
     public String getUpdatedItemizedList() {
         StringBuffer buffer = new StringBuffer();
         Map<Integer,List<Item>> itemizedQty = new HashMap<>();
@@ -86,6 +94,7 @@ public class Cart {
         return buffer.toString();
     }
 
+    //Remove the item from the cart
     public int removeItem(Item itemParam) {
         itemList.remove(itemParam);
         return itemList.size();
